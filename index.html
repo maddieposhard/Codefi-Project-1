@@ -7,11 +7,8 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <a href="favorites.html" class="favorites-btn">
-        <img src="images/favorites.png" alt="favorites" class="favorites-img">
-    </a>
 <header class="header">
-    <h1 class="title">Your Daily Affirmation</h1>
+    <h1 class="title"><img src="images/header.png" alt="Your Daily Affirmation" class="header-img"></h1>
 </header>
 <div class="affirmation-container">
     <div class="affirmation-box">
@@ -22,11 +19,25 @@
 </div>
 <div class="btn-box">
     <button class="btn new-btn">New Affirmation</button>
-    <button class="btn save-btn">Save Affirmation</button>
+    <button class="btn submit-btn">Submit Affirmation</button>
     <button class="btn share-btn">Share Affirmation</button>
+    <button class="btn save-btn">Save Affirmation</button>
+    <a href="favorites.html" class="favorites-btn">
+        <img src="images/favorites.png" alt="Favorites" class="favorites-img">
+    </a>
 </div>
-
-  
-<script src="scripts/index.js" type="module"></script>
+<div class="submit-form-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form class="submit-form">
+            <input type="text" class="affirmation-input" placeholder="Type your affirmation here">
+            <button class="form-btn" type="button">Submit</button>
+    </form>
+    </div>
+</div>
+<div class="footer">
+   
+</div>
+<script src="./scripts/index.js" type="module"></script>
 </body>
 </html>

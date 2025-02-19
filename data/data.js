@@ -1,4 +1,4 @@
-console.log('connect too')
-
 export const affirmations = [
 'I am capable of achieving my goals', 'I radiate love and positivity', 'I am worthy of love and respect', 'I am capable of facing any challenges that come my way', 'I am growing at my own pace', 'I am allowed to ask for what I need', 'I am safe and surrounded by love and support', 'I am valued and helpful', 'I belong here and I deserve to take up space', 'I practice gratitude for all that I have and all that is yet to come', 'My well-being is a priority and I am committed to nurturing it', 'I believe in the power of empathy and compassion to create a better world', 'I deserve the same kindness I give to others and I extend that kindness to myself','The boundaries I set this week will protect me and my relationships', 'I leave what no longer serves me in the past']
+
+export const favorites = []
