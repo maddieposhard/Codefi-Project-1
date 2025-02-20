@@ -57,10 +57,10 @@ submitBtn.onclick = function () {
 
 function addFavorite () {
     const currentAffirmation = affirmationText.textContent
-    let favoriteAffirmations = JSON.parse(localStorage.getItem('favorites'))
-    if (!favoriteAffirmations.includes(currentAffirmation)) {
-        favoriteAffirmations.push(currentAffirmation);
-        localStorage.setItem('favorites', JSON.stringify(favoriteAffirmations));
+    let favorites = JSON.parse(localStorage.getItem('favorites'));
+    if (!favorites.includes(currentAffirmation)) {
+        favorites.push(currentAffirmation);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
         console.log("Saved to favorites:", currentAffirmation);
         console.log("Favorite Affirmations:", favorites);
     } else {

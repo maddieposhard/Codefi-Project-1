@@ -4,16 +4,18 @@ const favoritesText = document.querySelector('.favorites-text')
 const favoritesList = document.querySelector('.favorites-list')
 
 function displayFavorites () {
-    let favoriteAffirmations = JSON.parse(localStorage.getItem('favorites'));
-    if (favoriteAffirmations.length === 0) {
+    let favorites = JSON.parse(localStorage.getItem('favorites'));
+    if (favorites.length === 0) {
         favoritesList.innerHTML = '<p>No favorites yet!</p>';
     } else {
-        favoriteAffirmations.forEach (affirmation => {
+        favorites.forEach (affirmation => {
             let favoritesListItem = document.createElement('li');
             favoritesListItem.textContent = affirmation;
             favoritesList.appendChild(favoritesListItem);
         })
     }
 }
+
+displayFavorites();
 
 console.log(favorites)
