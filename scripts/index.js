@@ -11,16 +11,37 @@ const submitFormModal = document.querySelector('.submit-form-modal');
 const close = document.querySelector('.close');
 const formBtn = document.querySelector('.form-btn');
 const saveBtn = document.querySelector('.save-btn');
+const data = JSON.parse(localStorage.getItem('affirmations'))
 
-function displayAffirmation () {
-    let i = Math.floor(Math.random() * affirmations.length);
-    const affirmation = affirmations[i];
+// first load display(affirmations) on formBtn display(data) => favorites => home = first load
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (!data) {
+        displayAffirmation(affirmations);
+    } else {
+        displayAffirmation(data)
+    }
+})
+
+
+
+function displayAffirmation (affirmationsList) {
+    let i = Math.floor(Math.random() * affirmationsList.length);
+    const affirmation = affirmationsList[i];
     affirmationText.textContent = affirmation;
-    console.log(affirmation);
+    console.log(affirmationsList);
 };
 
-displayAffirmation();
-newBtn.addEventListener('click', displayAffirmation);
+
+newBtn.addEventListener('click', () => {
+    if (!data) {
+        displayAffirmation(affirmations);
+    } else {
+        displayAffirmation(data)
+    }
+})
+
 
 
 shareBtn.addEventListener("click", function () {
@@ -29,12 +50,10 @@ shareBtn.addEventListener("click", function () {
     window.location.href = `mailto:?subject=${subject}&body=${affirmation}`;
 });
 
-//Submitted affirmations aren't saved in local storage to use in favorites unless favorited before navigating to the page
 //I would like the form content to reset after closing and reopening the modal
 //I also want it to show if an affirmation is the same as one already in the array
 
 function addAffirmation (e) {
-    // let affirmations = JSON.parse(localStorage.getItem('affirmations'));
     e.preventDefault();
             if (affirmationInput) {
                 affirmations.push(affirmationInput.value)
@@ -42,11 +61,15 @@ function addAffirmation (e) {
             } else {
                 alert('Please enter your affirmation!')
             }
-    console.log(affirmationInput.value);
-    console.log(affirmations);
 };
 
-formBtn.addEventListener('click', addAffirmation);
+formBtn.addEventListener('click', function (e) {
+    addAffirmation(e);
+    submitFormModal.style.display = 'none';
+    affirmationContainer.classList.remove('blur');
+    const data = JSON.parse(localStorage.getItem('affirmations'));
+    displayAffirmation(data);
+});
 
 
 close.addEventListener('click', function () {
@@ -61,7 +84,7 @@ submitBtn.addEventListener('click', function () {
 
 function addFavorite () {
     const currentAffirmation = affirmationText.textContent
-    let favorites = JSON.parse(localStorage.getItem('favorites'));
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     if (!favorites.includes(currentAffirmation)) {
         favorites.push(currentAffirmation);
         localStorage.setItem('favorites', JSON.stringify(favorites));
@@ -71,10 +94,9 @@ function addFavorite () {
         console.log("quote is already in favorites");
     }}
 
-saveBtn.addEventListener ('click', addFavorite)
+saveBtn.addEventListener ('click', () => addFavorite())
 
 
-console.log(affirmations)
 
 
 

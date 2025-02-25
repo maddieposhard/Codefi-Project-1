@@ -33,5 +33,4 @@ function deleteFavorite(index) {
 
 displayFavorites();
 
-// use method indexOf on click, or event.closest method
-//pointer event closest method
+//Add button to display all affirmations and delete some
