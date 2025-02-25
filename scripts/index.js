@@ -1,5 +1,4 @@
 import {affirmations, favorites} from '../data/data.js'
-import { displayFavorites } from "./index.js";
 
 const affirmationContainer = document.querySelector('.affirmation-container');
 const affirmationText = document.querySelector('.affirmation-text');
@@ -66,11 +65,12 @@ function addFavorite () {
         console.log("Favorite Affirmations:", favorites);
     } else {
         console.log("quote is already in favorites");
-    }
-displayFavorites
-}
+    }}
 
 saveBtn.addEventListener ('click', addFavorite)
+
+
+console.log(affirmations)
 
 
 
