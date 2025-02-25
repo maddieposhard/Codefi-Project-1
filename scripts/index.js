@@ -29,13 +29,16 @@ shareBtn.addEventListener("click", function () {
     window.location.href = `mailto:?subject=${subject}&body=${affirmation}`;
 });
 
-
+//Submitted affirmations aren't saved in local storage to use in favorites unless favorited before navigating to the page
+//I would like the form content to reset after closing and reopening the modal
+//I also want it to show if an affirmation is the same as one already in the array
 
 function addAffirmation (e) {
+    // let affirmations = JSON.parse(localStorage.getItem('affirmations'));
     e.preventDefault();
-    console.log(affirmationInput.value)
             if (affirmationInput) {
                 affirmations.push(affirmationInput.value)
+                localStorage.setItem('affirmations', JSON.stringify(affirmations));
             } else {
                 alert('Please enter your affirmation!')
             }
@@ -45,15 +48,16 @@ function addAffirmation (e) {
 
 formBtn.addEventListener('click', addAffirmation);
 
+
 close.addEventListener('click', function () {
     submitFormModal.style.display = 'none';
     affirmationContainer.classList.remove('blur');
 });
 
-submitBtn.onclick = function () {
+submitBtn.addEventListener('click', function () {
     submitFormModal.style.display = 'flex';
     affirmationContainer.classList.add('blur');
-};
+});
 
 function addFavorite () {
     const currentAffirmation = affirmationText.textContent

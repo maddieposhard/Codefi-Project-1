@@ -14,11 +14,9 @@ function displayFavorites () {
             favoritesListItem.textContent = affirmation;
             let deleteBtn = document.createElement('button');
             deleteBtn.textContent = 'x';
-
             deleteBtn.addEventListener('click', () => {
                 deleteFavorite(index);
             });
-
             favoritesListItem.appendChild(deleteBtn);
             favoritesList.appendChild(favoritesListItem);
         })
