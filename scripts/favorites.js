@@ -1,5 +1,7 @@
 import { favorites } from "../data/data.js";
 
+//need to fix on initial favorites load
+
 const favoritesText = document.querySelector('.favorites-text')
 const favoritesList = document.querySelector('.favorites-list')
 
