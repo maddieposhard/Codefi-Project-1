@@ -8,8 +8,8 @@ export function displayModal() {
             <input type="text" class="affirmation-input" placeholder="Type here!">
             <button class="form-btn" type="button">Submit</button>
         </form>
-        <p class="favoritesModal" hidden>Affirmation is already in favorites</p>
-        <p class="savedModal" hidden>Saved to favorites</p>
+        <p class="favoritesModal" hidden>Affirmation is already in favorites!</p>
+        <p class="savedModal" hidden>Saved to favorites!</p>
     </div>`;
     modalContainer.innerHTML = modalHTML;
     modalContainer.removeAttribute('style')

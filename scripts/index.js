@@ -1,14 +1,12 @@
 import { affirmations, favorites } from "../data/data.js";
-import { closeHandler } from "./handlers/closeHandler.js";
 import { shareHandler } from "./handlers/shareHandler.js";
 import { addFavorite } from "./handlers/favoriteHandler.js";
-import { removeHandler } from "./handlers/submitHandler.js";
-import { displayAffirmation } from "./handlers/displayHandler.js";
+import { removeHandler } from "./handlers/removeHandler.js";
+import { displayAffirmation } from "./handlers/displayIndexHandler.js";
 
 let submitBtn = document.querySelector(".submit-btn");
 const newBtn = document.querySelector(".new-btn");
 const shareBtn = document.querySelector(".share-btn");
-const submitForm = document.querySelector(".submit-form");
 const saveBtn = document.querySelector(".save-btn");
 
 export const affirmationText = document.querySelector(".affirmation-text");
@@ -17,11 +15,12 @@ export const affirmationContainer = document.querySelector(".affirmation-contain
 export const modal = document.querySelector(".modal");
 export const data = JSON.parse(localStorage.getItem("affirmations"));
 
-// first load display(affirmations) on formBtn display(data) => favorites => home = first load
 
+// Displays data or affirmations on first page load
 document.addEventListener("DOMContentLoaded", () => {
   !data? displayAffirmation(affirmations) : displayAffirmation(data)})
 
+// New affirmation button displays a new affirmation from the data array when pressed, or the affirmations array if there is no data
 newBtn.addEventListener("click", () => {
  !data? displayAffirmation(affirmations) : displayAffirmation(data)});
 
