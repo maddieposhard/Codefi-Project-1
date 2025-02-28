@@ -21,8 +21,6 @@ function displayAll() {
         list.appendChild(listItem);
     });
     affirmationContainer.appendChild(list);
-    
-    
 }}
 
 displayAll();
