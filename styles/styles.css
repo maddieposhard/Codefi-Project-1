@@ -70,13 +70,6 @@
     gap: 10px;
 }
 
-.affirmation-container {
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .affirmation-box {
     width: 500px;
     height: 200px;
@@ -169,20 +162,55 @@
     cursor: pointer;
 }
 
-.delete-btn {
-    background-color: #3b4548;
+.favorites-text {
+    margin: 20px;
+    border: 10px;
+    border-radius: 15px;
+    background: #3b4548;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); 
+    width: 600px;
+}
+
+.favorites-list {
+    list-style: none;
+    padding: 5px;
+}
+
+.favorites-list li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px;
     color: #dde3ec;
+}
+
+.delete-btn {
+    background-color: #dde3ec;
+    color: #3b4548;
     border: none;
     border-radius: 5px;
     margin-left: 10px;
+    margin-right: 10px;
 }
 
 .delete-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .erase-btn {
-    background-color: #3b4548;
+    background-color: #dde3ec;
+    color: #3b4548;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.erase-btn:hover {
+    transform: scale(1.1);
 }
 
 .back-btn {
@@ -207,6 +235,43 @@
 
 .show-all-btn:hover {
     transform: scale(1.05);
+}
+
+.fave-btn {
+    position: fixed;
+    top: 30px;
+    right: 10px;
+    text-decoration: none;
+    color: #3b4548;  
+}
+
+.fave-btn:hover {
+    transform: scale(1.05);
+}
+
+.affirmations-container {
+    margin: 20px;
+    border: 10px;
+    border-radius: 15px;
+    background: #3b4548;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); 
+    width: 600px;
+}
+
+.all-list {
+    list-style: none;
+    padding: 5px;
+}
+
+.all-list li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px;
+    color: #dde3ec;
 }
 
 body {

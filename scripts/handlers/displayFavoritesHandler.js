@@ -10,14 +10,15 @@ export function displayFavorites () {
         favorites.forEach ((affirmation, index) => {
             let favoritesListItem = document.createElement('li');
             let deleteBtn = document.createElement('button');
-            favoritesListItem.textContent = affirmation;
             deleteBtn.textContent = 'x';
             deleteBtn.classList.add('delete-btn');
             deleteBtn.addEventListener('click', () => {
                 deleteFavorite(index);
             });
             favoritesListItem.appendChild(deleteBtn);
+            favoritesListItem.appendChild(document.createTextNode(affirmation));
             favoritesList.appendChild(favoritesListItem);
         })
     }
+    // favoritesListItem.textContent = affirmation;
 }

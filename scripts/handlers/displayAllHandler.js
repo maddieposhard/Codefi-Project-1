@@ -8,16 +8,17 @@ export function displayAll() {
         affirmationContainer.innerHTML = "<p>No affirmations available.</p>";
     } else {
     const list = document.createElement("ul");
+    list.classList.add('all-list')
     data.forEach((affirmation, index) => {
         const listItem = document.createElement("li");
-        listItem.textContent = affirmation;
         let eraseBtn = document.createElement('button');
         eraseBtn.textContent = 'x';
-        eraseBtn.classList.add = ('erase-btn');
+        eraseBtn.classList.add('erase-btn');
         eraseBtn.addEventListener('click', () => {
             deleteAffirmation(index);
         });
         listItem.appendChild(eraseBtn);
+        listItem.appendChild(document.createTextNode(affirmation));
         list.appendChild(listItem);
     });
     affirmationContainer.appendChild(list);
